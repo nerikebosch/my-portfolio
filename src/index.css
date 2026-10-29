@@ -1,0 +1,198 @@
+/* ==========================================================================
+   STUDIO GHIBLI & WOODY BOTANICAL DESIGN SYSTEM
+   ========================================================================== */
+
+:root {
+  /* Warm Parchment & Paper Backgrounds */
+  --bg-primary: #fbf8f2;
+  --bg-secondary: #f4ecdf;
+  --bg-card: #fffdf9;
+  --bg-card-subtle: #f8f3ea;
+  --bg-card-hover: #ffffff;
+  
+  /* Wood Tones (Deep Timber, Warm Cedar, Oak, Birch) */
+  --wood-deep: #382419;
+  --wood-dark: #523525;
+  --wood-mid: #784e37;
+  --wood-warm: #9c674b;
+  --wood-light: #c29272;
+  --wood-pale: #e7cbb5;
+  --wood-border: #dfd1be;
+
+  /* Studio Ghibli Forest & Nature Greens */
+  --forest-deep: #1d3121;
+  --forest-dark: #29442e;
+  --forest-green: #38593f;
+  --forest-leaf: #507857;
+  --forest-sage: #7f9d84;
+  --forest-sprout: #a8bfa8;
+  --forest-mist: #e5eee5;
+
+  /* Warm Sunlight & Terracotta Accents */
+  --amber-sun: #e59a3f;
+  --amber-soft: #f4ba6d;
+  --amber-glow: rgba(229, 154, 63, 0.18);
+  --rust-terracotta: #b75736;
+  --rust-light: #df7a57;
+
+  /* Ink & Typography */
+  --ink-charcoal: #231f1d;
+  --ink-chestnut: #3d342f;
+  --ink-muted: #6e645c;
+  --ink-subtle: #998e85;
+
+  /* Borders & Shadows */
+  --border-delicate: #e8ded1;
+  --border-wood: #d5c3af;
+  --border-focus: #507857;
+  --shadow-warm-sm: 0 2px 8px rgba(56, 36, 25, 0.06);
+  --shadow-warm-md: 0 8px 24px rgba(56, 36, 25, 0.08);
+  --shadow-warm-lg: 0 16px 40px rgba(56, 36, 25, 0.12);
+  --shadow-wood-inset: inset 0 2px 4px rgba(56, 36, 25, 0.05);
+
+  /* Typography */
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  
+  /* Radii */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --transition-smooth: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* CSS Reset & Baseline */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  color-scheme: light;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--ink-chestnut);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  position: relative;
+  /* Gentle parchment texture & soft Ghibli dappled lighting effect */
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(229, 154, 63, 0.07) 0%, transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(80, 120, 87, 0.08) 0%, transparent 45%),
+    radial-gradient(circle at 20% 70%, rgba(183, 87, 54, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 80% 90%, rgba(120, 78, 55, 0.07) 0%, transparent 45%);
+  background-attachment: fixed;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--wood-light);
+  border-radius: var(--radius-full);
+  border: 2px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--wood-mid);
+}
+
+/* Text Selection */
+::selection {
+  background-color: var(--forest-mist);
+  color: var(--forest-deep);
+}
+
+/* Typography Defaults */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  color: var(--ink-charcoal);
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+  font-weight: 600;
+}
+
+p {
+  color: var(--ink-chestnut);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+/* Global Container Utility */
+.container {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Subtle Wooden Divider Accent */
+.wood-divider {
+  height: 3px;
+  width: 70px;
+  background: linear-gradient(90deg, var(--amber-sun), var(--wood-mid), var(--forest-leaf));
+  border-radius: var(--radius-full);
+  margin: 16px auto 0;
+}
+
+/* Section Header Shared Utility */
+.section-header-block {
+  text-align: center;
+  margin-bottom: 52px;
+}
+
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: var(--forest-mist);
+  color: var(--forest-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--forest-sprout);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.section-title-large {
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  color: var(--wood-deep);
+  position: relative;
+  display: inline-block;
+}
+
+.section-subtitle-text {
+  font-size: 1.05rem;
+  color: var(--ink-muted);
+  max-width: 600px;
+  margin: 14px auto 0;
+}
