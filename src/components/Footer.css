@@ -1,0 +1,125 @@
+.ghibli-footer {
+  background: var(--bg-card);
+  border-top: 1px solid var(--border-wood);
+  padding: 50px 0 35px;
+  position: relative;
+}
+
+.ghibli-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--forest-leaf), var(--wood-mid), var(--amber-sun));
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.footer-brand-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+}
+
+.footer-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--wood-deep);
+}
+
+.footer-icon {
+  font-size: 1.4rem;
+}
+
+.footer-motto {
+  font-size: 0.92rem;
+  color: var(--ink-muted);
+  max-width: 450px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-links a {
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink-chestnut);
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--transition-smooth);
+}
+
+.footer-links a:hover {
+  color: var(--forest-leaf);
+  background-color: var(--forest-mist);
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 24px;
+  border-top: 1px dashed var(--border-wood);
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy {
+  font-size: 0.85rem;
+  color: var(--ink-subtle);
+}
+
+.back-to-top-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-wood);
+  color: var(--wood-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.back-to-top-btn:hover {
+  background: var(--forest-dark);
+  color: #fffdf9;
+  border-color: var(--forest-dark);
+  transform: translateY(-2px);
+}
+
+.arrow-up {
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.back-to-top-btn:hover .arrow-up {
+  transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+}

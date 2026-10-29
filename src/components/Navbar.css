@@ -1,22 +1,189 @@
+.navbar-wrapper {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: var(--transition-smooth);
+  padding: 16px 0;
+  background: rgba(251, 248, 242, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid transparent;
+}
+
+.navbar-wrapper.navbar-scrolled {
+  padding: 10px 0;
+  background: rgba(253, 251, 247, 0.92);
+  border-bottom: 1px solid var(--border-wood);
+  box-shadow: var(--shadow-warm-sm);
+}
+
 .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--wood-deep);
+  letter-spacing: -0.01em;
+  padding: 6px 12px;
+  border-radius: var(--radius-md);
+  transition: var(--transition-smooth);
+}
+
+.navbar-brand:hover {
+  background-color: var(--bg-card-subtle);
+  color: var(--forest-dark);
+}
+
+.brand-leaf-icon {
+  font-size: 1.3rem;
+  display: inline-block;
+  transform-origin: center bottom;
+  transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover .brand-leaf-icon {
+  transform: rotate(15deg) scale(1.15);
+}
+
+/* Nav Menu */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink-chestnut);
+  border-radius: var(--radius-full);
+  transition: var(--transition-smooth);
+  position: relative;
+}
+
+.nav-icon {
+  font-size: 0.9rem;
+  opacity: 0.75;
+}
+
+.nav-link:hover {
+  color: var(--forest-dark);
+  background-color: rgba(80, 120, 87, 0.1);
+}
+
+/* Contact button in navbar */
+.nav-link-btn {
+  margin-left: 12px;
+  background: linear-gradient(135deg, var(--wood-dark), var(--wood-mid));
+  color: #fffdf9 !important;
+  padding: 9px 20px;
+  font-weight: 600;
+  box-shadow: 0 3px 10px rgba(82, 53, 37, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-link-btn .btn-arrow {
+  transition: transform 0.25s ease;
+  font-size: 1.05rem;
+}
+
+.nav-link-btn:hover {
+  background: linear-gradient(135deg, var(--forest-dark), var(--forest-leaf));
+  color: #fffdf9 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(41, 68, 46, 0.25);
+}
+
+.nav-link-btn:hover .btn-arrow {
+  transform: translateX(4px);
+}
+
+/* Mobile Toggle */
+.mobile-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-card-subtle);
+  border: 1px solid var(--border-wood);
+  border-radius: var(--radius-md);
+  padding: 9px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.mobile-toggle:hover {
+  background: var(--bg-secondary);
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--wood-dark);
+  border-radius: 2px;
+  transition: var(--transition-smooth);
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .mobile-toggle {
+    display: flex;
+  }
+
+  .navbar-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 16px;
+    right: 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-wood);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-warm-lg);
+    flex-direction: column;
+    padding: 20px;
+    gap: 12px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: var(--transition-smooth);
+  }
+
+  .navbar-menu.menu-open {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  .nav-link {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: white;
-    padding: 10px;
-}
+    justify-content: flex-start;
+    padding: 12px 18px;
+    font-size: 1rem;
+  }
 
-.navbar-center {
-    display: flex;
+  .nav-link-btn {
+    margin-left: 0;
+    margin-top: 6px;
     justify-content: center;
-    color: white;
-    text-decoration: none;
-    padding: 10px;
-    gap: 40px;
-}
-
-a:link {
-    text-decoration: none;
-    color: green;
+    width: 100%;
+  }
 }
